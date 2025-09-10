@@ -1,0 +1,44 @@
+<app-customers-header></app-customers-header>
+<section class="customers-contact__wrapper">
+    <div class="customers-contact__contact-wrapper">
+        <h1 class="h1-customers">Customer Contact Form</h1>
+        <form class="customers-contact__form" [formGroup]="contactForm" (ngSubmit)="submit()">
+
+            <div class="lg-row">
+                <div class="input-wrapper">
+                    <input placeholder="First Name" class="main-input" formControlName="firstName" type="text" />
+                </div>
+                <div class="input-wrapper">
+                    <input placeholder="Last Name" class="main-input" formControlName="lastName" type="text" />
+                </div>
+            </div>
+            
+            <div class="lg-row">
+                <div class="input-wrapper">
+                    <input placeholder="Email" class="main-input" formControlName="email" type="email" />
+                </div>
+        
+                <div class="input-wrapper">
+                    <input placeholder="Phone Number" class="main-input" formControlName="phoneNumber" type="tel" />
+                </div>
+            </div>
+        
+            <div class="input-wrapper">
+              <input placeholder="Company Name" class="main-input" formControlName="companyName" type="text" />
+            </div>
+        
+            <div class="input-wrapper">
+              <textarea placeholder="Message" class="main-textarea" formControlName="message"></textarea>
+            </div>
+        
+            <button class="main-button" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="customers-contact__video-wrapper">
+        <video loop autoplay muted playsinline preload="auto" id="drivers-cover-mobile">
+            <source src="assets/images/customers/contact/drivers-cover-mobile.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+      </div>
+</section>
+<app-footer></app-footer>

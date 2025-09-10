@@ -1,0 +1,334 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.rent-equipment__banner {
+    min-height: 30dvh;
+    background-image: url('/assets/images/drivers/rent-equipment/rent-equipment-black-and-white.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom 50% center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(md) {
+        min-height: 50dvh;
+    }
+
+    @include respond(lg) {
+        min-height: 30dvh;
+     }
+
+    h1 {
+        text-align: center;
+        color: $mainWhite;
+        font-size: 50px;
+
+        @include respond(md) {
+            font-size: 100px;
+        }
+    }
+}
+
+.trucks__section {
+    max-width: 1325px;
+    margin: 0 auto;
+
+    .trucks__wrapper {
+        border-bottom: 1px solid black;
+        padding: 100px 0 80px 0;
+        margin: 0 30px;
+
+        @include respond(md) {
+            margin: 0 80px;
+        }
+
+        @include respond(xxl) {
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 70px;
+
+            @include respond(md) {
+                font-size: 40px;
+            }
+
+            @include respond(lg) {
+                font-size: 60px;
+            }
+        }
+
+        .main-button {
+            width: 100%;
+            font-size: 18px;
+
+            @include respond(md) {
+                max-width: 250px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+}
+
+.trailers__section {
+    max-width: 1325px;
+    margin: 0 auto;
+
+    .trailers__wrapper {
+        padding: 80px 0;
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include respond(md) {
+            margin: 0 80px;
+        }
+
+        @include respond(lg) {
+            flex-direction: row;
+        }
+
+        @include respond(xxl) {
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 70px;
+
+            @include respond(md) {
+                font-size: 40px;
+            }
+
+            @include respond(lg) {
+                font-size: 60px;
+            }
+        }
+
+        p {
+            line-height: 1.7em;
+            color: $mainGrey;
+            font-size: 18px;
+        }
+
+        ul {
+            padding: 0 20px;
+            color: $mainGrey;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .main-button {
+            width: 100%;
+            font-size: 18px;
+
+            @include respond(md) {
+                max-width: 250px;
+                display: block;
+            }
+        }
+    }
+}
+
+.section-video__component-wrapper {
+    margin: 150px 0 300px 0;
+}
+
+.prices__section {
+    background-image: url('/assets/images/drivers/prices/comparing-table-bg.png');
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    background-color: $orientetionBkg;
+    background-position: center;
+    padding: 100px 0;
+
+    @include respond(lg) {
+        padding: 200px 0 100px 0;
+    }
+}
+
+.prices__wrapper {
+    max-width: 1325px;
+    margin: 0 auto;
+    position: relative;
+
+    h2 {
+        text-align: center;
+        font-size: 28px;
+        color: $mainWhite;
+        margin-bottom: 50px;
+
+        @include respond(md) {
+            font-size: 45px;
+        }
+    }
+}
+
+.counter__container {
+    margin-bottom: 50px;
+
+    @include respond(lg) {
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.counter__wrapper {
+    text-align: center;
+
+    h4 {
+        text-align: center;
+        color: $mainWhite;
+        font-size: 30px;
+
+        @include respond(md) {
+            font-size: 40px;
+        }
+
+        @include respond(lg) {
+            font-size: 50px;
+        }
+    }
+}
+
+::ng-deep {
+    .counter__wrapper {
+        .counter {
+            color: $silver !important;
+            text-shadow: 0.04em 0.04em 0.04em #000000 !important;
+
+            @include respond(lg) {
+                font-size: 160px !important;
+                line-height: 1em !important;
+            }
+        }
+    }
+
+    .counter__orange {
+        .counter {
+            color: $mainYellow !important;
+        }
+    }
+}
+
+.prices__items-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 20px;
+
+    @include respond(lg) {
+        flex-direction: row;
+    }
+
+    .prices__item-heading {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @include respond(lg) {
+            font-size: 50px;
+        }
+    }
+
+    .prices__item-subheading {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+.prices__item-competitor, .prices__item-jdm {
+    padding: 30px;
+    border-radius: 10px;
+
+    @include respond(lg) {
+        padding: 50px 30px;
+        position: relative;
+    }
+}
+
+.prices__item-competitor {
+    background-color: $mainWhite;
+    color: $mainBlack;
+    z-index: 5;
+
+    @include respond(lg) {
+       left: 100px;
+       padding-right: 90px;
+    }
+
+    h2 {
+        color: $mainBlack;
+    }
+}
+
+.prices__item-jdm {
+    background-image: linear-gradient(137deg, #ff900c 0%, #ec4700 100%);
+    color: $mainWhite;
+    z-index: 10;
+    box-shadow: 0px 5px 28px 12px #242424;
+
+    img {
+        margin: 0 auto;
+    }
+
+    .secondary-button {
+        width: 100%;
+
+        @include respond(lg) {
+            width: 250px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.prices__item-custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.prices__item-custom-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  line-height: 1.8em;
+} 
+
+
+.prices__item-custom-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+}
+
+.list-competitor li::before {
+    background: url("/assets/images/close-circle.svg") no-repeat center center;
+    filter: brightness(0) saturate(100%) invert(57%) sepia(51%) saturate(798%) hue-rotate(347deg) brightness(100%) contrast(111%);
+}
+
+.list-jdk li::before {
+    background: url("/assets/images/check-circle.svg") no-repeat center center;
+}

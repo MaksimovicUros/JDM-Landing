@@ -1,0 +1,44 @@
+<section #section class="slider__section">
+  <div class="slider__text-wrapper">
+    <h2 #textAnimate class="slider__heading text-animate">{{ data.title }}</h2>
+    <p class="slider__paragraph" *ngFor="let text of data.text">{{ text }}</p>
+  </div>
+  <div class="image-switcher">
+     <div class="image-container">
+      <ng-container *ngFor="let item of data.items; let i = index">
+      <div class="image-wrapper" [class.active]="i === currentIndex"> 
+        <div #text [class.active]="i === currentIndex" class="slider__follow-text">
+          {{ item.bkgText }}
+        </div>
+        <img
+        loading="lazy"
+        [src]="item.imgUrl"
+        alt="image"
+        />
+      </div>
+      </ng-container>
+      
+    </div>
+    
+    <div class="controls">
+      <div (click)="prev()" class="control-item">
+          <span class="material-symbols-outlined">
+              keyboard_arrow_left
+          </span>
+      </div>
+      <div (click)="next()" class="control-item">
+          <span class="material-symbols-outlined">
+              keyboard_arrow_right
+          </span>
+      </div>
+    </div>
+  </div>
+  <a 
+  href="https://meetings.hubspot.com/nikola-beloica/schedule-a-meeting-jdm?uuid=7429f52a-edbf-481e-ade6-291f984e0b64" 
+  target="_blank" 
+  class="main-button"
+  rel="noopener noreferrer"
+  >
+  Book a Call
+</a>
+</section>  

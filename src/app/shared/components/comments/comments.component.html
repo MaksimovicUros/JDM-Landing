@@ -1,0 +1,17 @@
+<section class="commets__section">
+    <div class="comments__text-wrapper">
+        <h2 #commentsTitle class="text-animate">{{ data.title }}</h2>
+        <p *ngFor="let text of data.texts">{{ text }}</p>
+        <a class="main-button" href="{{ data.buttonUrl }}">{{ data.buttonText }}</a>
+    </div>
+    <div #itemsWrapper class="comments__items-wrapper">
+        <div class="comments__item" *ngFor="let comment of data.comments">
+            <div class="item__image-wrapper">
+                <img loading="lazy" [src]="comment.imgSrc" alt>
+            </div>
+            <div class="item__text-wrapper">
+                <p>"{{ comment.comment }}"</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,71 @@
+<div class="overlay-content">
+  <div class="back-wrapper" (click)="close()">
+    <span class="material-symbols-outlined arrow">
+      arrow_left_alt
+    </span>
+    <span>GO BACK</span>
+  </div>
+  
+  <section>
+    <h2 class="overlay__title">{{ data.title }}</h2>
+    <div class="overlay__banner-image-wrapper" *ngIf="!data?.isBannerVideo; else video">
+      <img loading="lazy" class="overlay__banner-image" src="{{ data.bannerImgSrc }}" alt="banner image">
+    </div>
+    <ng-template #video>
+      <div class="overlay__banner-image-wrapper">
+        <video loop autoplay muted playsinline id="customers-banner-video">
+          <source src="{{ data.bannerImgSrc }}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </ng-template>
+  </section>
+  
+  <section>
+    <div class="overlay__text-wrapper">
+      <p *ngFor="let boldText of data.boldedText">
+        <strong>
+          {{ boldText }}
+        </strong>
+        <br>
+        <br>
+      </p>
+      <br>
+      <p class="overlay__text-smaller">
+        {{ data.text }}
+      </p>
+    </div>
+  </section>
+  
+  <section>
+    <div class="overlay__value-item">
+      <div class="value-item__text">Cargo value:</div>
+      <div class="value-item__value">{{ data.cargoValue }}</div>
+    </div>
+    <div class="overlay__value-item">
+      <div class="value-item__text">Max weight:</div>
+      <div class="value-item__value">{{ data.maxWeight }}</div>
+    </div>
+    <div class="overlay__value-images-wrapper">
+      <img loading="lazy" class="overlay__value-image" src="{{ data.leftImgSrc }}" alt>
+      <img loading="lazy" class="overlay__value-image" src="{{ data.rightImgSrc }}" alt>
+    </div>
+  </section>
+  
+  <section>
+    <div class="project-secton__wrapper">
+      <div class="project-section__heading mb-15">Have a project in mind?</div>
+        <div class="project-section__buttons-wrapper">
+          <div (click)="goToLink()" class="project-section__blue-button">Book a call</div>
+          <div class="project-section__close-button" (click)="close()">Go Back</div>
+        </div>
+        <div class="project-section__heading">Or give us a call at:</div>
+        <div class="project-section__heading">
+          <span class="material-symbols-outlined">
+            settings_phone
+          </span> 
+          708-942-4585
+        </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,20 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+
+.counter {
+  font-size: 80px;
+  font-weight: 800;
+  color: $mainWhite;
+  opacity: 0;
+  animation: fadeIn $main-animation-duration ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

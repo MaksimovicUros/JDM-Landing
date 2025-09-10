@@ -1,0 +1,48 @@
+<section class="operating-area__section" [class.bkg-white]="data.bkgWhite">
+    <div class="operating__wrapper">
+        <div class="operating__text-wrapper">
+            <h2 #title class="h2-drivers">{{ data.title }}</h2>
+            <p class="p-drivers">{{ data.text }}</p>
+        </div>
+        <div class="operating__label-wrapper" *ngIf="data.showLabel">
+            <div class="label-box"></div>
+            <div class="label-text">{{ data.labelText }}</div>
+        </div>
+        <div class="operating__label-wrapper" *ngIf="data?.showSlider">
+            <div class="switch-text">Solo Drivers</div>
+            <label class="switch">
+              <input [(ngModel)]="sliderChecked" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            <div class="switch-text">Team Drivers</div>
+        </div>
+        <div class="operating__image-wrapper">
+            <ng-container *ngIf="!sliderChecked; else secondImage">
+                <img
+                loading="lazy"
+                [decoding]="'async'"
+                [src]="data.imgSrc"
+                alt
+                [srcset]="data.imgSrcSet"
+                [sizes]="data.imgSizes"
+                />
+            </ng-container>
+            <ng-template #secondImage>
+                <img
+                loading="lazy"
+                [decoding]="'async'"
+                [src]="data.secondImgSrc"
+                alt
+                [srcset]="data.secondImgSrcSet"
+                [sizes]="data.imgSizes"
+                />
+            </ng-template>
+            
+            <div *ngIf="data.showLocation" class="location">
+                <span class="material-symbols-outlined">
+                    explore_nearby
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,109 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.customers-header {
+    background-color: $customerHeaderBkg;
+    padding: 1.2rem $header-spacing-xs;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.customers-header__wrapper {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond(xl) {
+      max-width: 1325px;
+      margin: 0 auto;
+    }
+}
+
+.logo {
+    width: 100px;
+    height: 60px;
+
+    @include respond(lg) {
+      
+    }
+}
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include respond(lg) {
+    display: none;
+  }
+  
+  span {
+      height: 2px;
+      width: 20px;
+      background-color: $mainWhite;
+      border-radius: 8px;
+  }
+}
+
+.menu__container {
+  background-color: $mainBlueNew;
+  position: absolute;
+  top: 98px;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $main-animation-duration ease-in-out;
+
+  @include respond(lg) {
+    position: initial;
+    max-height: unset;
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  .menu__list {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+
+    @include respond(lg) {
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu__list-item {
+        .menu__list-item-link {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: $mainWhite;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            @include respond(lg) {
+              padding: 0;
+            }
+        }
+    }
+  }
+}
+
+.menu__container.open {
+  max-height: 500px; // set a value bigger than the expected content height
+}
+
+.logo-wrapper {
+  cursor: pointer;
+}

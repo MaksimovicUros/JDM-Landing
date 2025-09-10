@@ -1,0 +1,74 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+::ng-deep {
+    .customers-header {
+        background-color: rgba(0, 0, 0, 0.24) !important;
+    }
+}
+
+.customers-contact__wrapper {
+    min-height: 100dvh;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow: hidden;
+
+    @include respond(lg) {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr; // all rows same height
+    }
+}
+
+.customers-contact__contact-wrapper {
+    padding: 150px 20px 0 20px;
+    word-break: break-word;
+    color: $mainBlack;
+
+    @include respond(md) {
+        padding: 150px 60px 0 60px;
+    }
+
+    @include respond(lg) {
+        padding: 150px 20px 0 20px;
+    }
+
+    @include respond(xl) {
+        width: 70%;
+        margin: 0 auto;
+        padding: 150px 0 0 0;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+    }
+}
+
+.customers-contact__form {
+    margin: 0 auto;
+
+    .input-wrapper { 
+        margin-bottom: 20px;
+    }
+
+    .main-button {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 60px;
+
+        &:hover {
+            background-color: $mainBlueNew;
+        }
+    }
+}
+
+.customers-contact__video-wrapper {
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

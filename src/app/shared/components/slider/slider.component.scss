@@ -1,0 +1,171 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.slider__section {
+  .main-button {
+    display: block;
+    font-size: 18px;
+    margin: 0 auto;
+    width: fit-content;
+    width: 250px;
+  }
+}
+
+.slider__text-wrapper {
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slider__heading {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+
+  @include respond(sm) {
+    font-size: 34px;
+  }
+
+  @include respond(lg) {
+    font-size: 48px;
+  }
+}
+
+.slider__paragraph {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.image-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90dvh;
+  position: relative;
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    overflow: visible;
+
+    .image-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    img {
+      object-fit: contain;
+      position: relative;
+      z-index: 1000;
+      width: 90%;
+
+      @include respond(sm) {
+        width: 70%;
+      }
+
+      @include respond(md) {
+        width: 60%;
+      }
+
+      @include respond(lg) {
+        width: 70%;
+      }
+    }
+  }
+}
+
+  .controls {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    .control-item {
+      cursor: pointer;
+      color: $mainBlack;
+      padding: 40px 50px;
+      transition: all $main-animation-duration ease-in-out;
+
+      &:hover {
+        background-color: $mainBlack;
+
+        span {
+          color: $mainWhite;
+        }
+      }
+
+      span { 
+        font-size: 50px;
+      }
+    }
+  }
+
+.slider__follow-text {
+  position: absolute;
+  transition: top $main-animation-duration linear;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.1s linear;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: rgba(0, 0, 0, 0.15) 0px 15px 30px;
+  color: $mainWhite;
+  white-space: nowrap;
+
+  @include respond(lg) {
+    font-size: 100px;
+  }
+
+  @include respond(xl) {
+    font-size: 150px;
+  }
+  
+  &.active {
+    opacity: 1;
+    z-index: 900;
+  }
+}
+
+.text-animate{
+    @include respond(lg) {
+        opacity: 0;
+        &.animate {
+          animation: fadeIn $main-animation-duration ease-in  forwards;
+        }
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

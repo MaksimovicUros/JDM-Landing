@@ -1,0 +1,126 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.discount__section {
+    background-image: url('/assets/images/discount/rental-discount-bg.png');
+    min-height: 100dvh;
+    background-size: cover;
+    background-position: right 69% bottom 10%;
+    background-color: $discountBkg;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(xxl) {
+        background-position: unset;
+    }
+}
+
+.discount__text-wrapper {
+    padding: 200px 20px 50px 20px;
+    color: $mainWhite;
+
+    @include respond(md) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include respond(lg) {
+        width: 50%;
+        margin: 0;
+        padding: 200px 20px 50px 100px;
+    }
+
+    @include respond(xl) {
+        width: 60%;
+        padding: 200px 20px 50px 200px;
+    }
+
+    @include respond(xxl) {
+        padding: 350px 20px 50px 350px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 30px;
+
+        @include respond(lg) {
+            font-size: 18px;
+        }
+    }
+
+    .main-button {
+        width: 100%;
+        font-size: 18px;
+
+        @include respond(md) {
+            display: block;
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        @include respond(lg) {
+            margin: 0;
+        }
+    }
+}
+
+.discount__heading-wrapper {
+    margin-bottom: 20px;
+}
+
+::ng-deep {
+    .h2-discount {
+        font-size: 25px;
+        color: $mainWhite;
+
+        @include respond(sm) {
+            font-size: 34px;
+        }
+
+        @include respond(md) {
+            font-size: 100px;
+        }
+    }
+}
+
+.discount__logos-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+
+    @include respond(md) {
+        gap: 60px;
+    }
+
+    .shield-logo {
+        width: 50px;
+        object-fit: contain;
+
+        @include respond(md) {
+            width: 75px;
+        }
+
+        @include respond(lg) {
+            width: 50px;
+        }
+    }
+
+    .smartway-logo {
+        width: 194px;
+        object-fit: contain;
+
+        @include respond(md) {
+            width: 314px;
+        }
+
+        @include respond(lg) {
+            width: 194px;
+        }
+    }
+}
+
+.discount__newsletter-wrapper {
+    margin-top: auto;
+}

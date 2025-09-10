@@ -1,0 +1,178 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.drivers-header {
+    background-color: $driversHeaderBkg;
+    padding: 1.2rem $header-spacing-xs;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+
+    @include respond(xl) {
+      padding: 0.5rem $header-spacing-xs;
+    }
+}
+
+.drivers-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  @include respond(xl) {
+    max-width: 1325px;
+    margin: 0 auto;
+  }
+}
+
+.logo-wrapper {
+  cursor: pointer;
+}
+
+.logo {
+    width: 100px;
+    height: 60px;
+
+    @include respond(lg) {
+      
+    }
+}
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include respond(xl) {
+    display: none;
+  }
+  
+  span {
+      height: 2px;
+      width: 20px;
+      background-color: $mainWhite;
+      border-radius: 8px;
+  }
+}
+
+.menu__container {
+  background-color: $mainBlueNew;
+  position: absolute;
+  top: 98px;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $main-animation-duration ease-in-out;
+
+  @include respond(xl) {
+    overflow: visible;
+    position: initial;
+    max-height: unset;
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  .menu__list {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+
+    @include respond(xl) {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .menu__list-item {
+      position: relative;
+
+      &:hover,
+      &:focus-within {
+        .submenu {
+          display: block;
+        }
+      }
+
+        .menu__list-item-link {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: $mainWhite;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            @include respond(xl) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0;
+            }
+        }
+    }
+  }
+}
+
+.menu__container.open {
+  max-height: 500px; // set a value bigger than the expected content height
+}
+
+.submenu {
+    list-style: none;
+
+    @include respond(xl) {
+      display: none;
+      position: absolute;
+      left: -20px;
+      bottom: -130px;
+      width: max-content;
+      background-color: white;
+      padding: 25px 0;
+    }
+
+    .submenu__link {
+        display: block;
+        padding: 0.7rem 1rem;
+        color: $mainWhite;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+
+        &:hover {
+            opacity: 0.8;
+            background-color: $driversHeaderHoverItem;
+        }
+
+        @include respond(xl) {
+          padding: 10px 40px;
+          color: $mainBlack;
+        }
+    }
+}
+
+.submenu-arrow {
+  display: none;
+
+  @include respond(xl) {
+    display: block;  
+  }
+}
+
+.full-application-list-item {
+  background-color: $mainYellow;
+
+  @include respond(xl) {
+    padding: 20px !important;
+    background-color: $driversBlue;
+    border-radius: 5px;
+  }
+}

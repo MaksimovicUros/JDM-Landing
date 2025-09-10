@@ -1,0 +1,119 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.main-input, .main-textarea, .main-select {
+    background-color: $inputBkg;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    height: 57px;
+    border: 1px solid transparent;
+    width: 100%;
+
+    &:focus {
+        outline: 1px solid black;
+    }
+}
+
+.main-label {
+    color: $mainGrey;
+    font-weight: 600;
+}
+
+.main-select {
+    color: $mainGrey;
+}
+
+.input-error-msg {
+    padding-left: 15px;
+    color: $mainYellow;
+}
+
+.input-with-button {
+    position: relative;
+    // background-color: $mainWhite;
+    background-color: grey;
+    width: 100%;
+
+    input {
+        width: 100%;
+        height: 61px;
+        border-radius: 5px;
+        border: none;
+        padding: 15px 10px;
+
+        &::placeholder {
+            color: $mainBlack;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+
+        &:hover {
+            background-color: $mainBlueNew;
+        }
+    }
+}
+
+.input-invalid {
+    border: 1px solid $mainYellow;
+}
+
+//radio buttons
+
+.position-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* hide native radio */
+.position-option input[type="radio"] {
+  display: none;
+}
+
+/* box style */
+.position-option label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 220px; /* makes them look like cards */
+}
+
+/* hover */
+.position-option label:hover {
+    border-color: #888;
+}
+
+/* custom radio circle */
+.custom-radio {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    background-color: $inputBkg;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.position-option input[type="radio"]:checked + label .custom-radio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background: $lightBlue;
+    border-radius: 50%;
+}

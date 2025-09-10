@@ -1,0 +1,29 @@
+<section class="showcase__container">
+    <div class="showcase__spacing-wrapper" *ngIf="data?.title">
+        <h2 class="showcase__title">
+        {{ data.title }}
+        </h2>
+        <p class="showcase__paragraph" *ngFor="let text of data.mainText">{{ text }}</p>
+    </div>
+    <div class="showcase__items-wrapper">
+        <div class="showcase__item" *ngFor="let item of data.showCaseItems; let i = index" [class.first-item-blue]="data.firstItemBlueBkg">
+            <div class="showcase__image-wrapper">
+                <ng-container *ngIf="item.isVideo; else showImage">
+                <video loop autoplay muted playsinline preload="auto" id="showcase-video">
+                    <source src="{{ item.imgUrl }}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                </ng-container>
+                <ng-template #showImage>
+                    <img loading="lazy" class="showcase-image" src="{{ item.imgUrl }}" alt>
+                </ng-template>
+            </div>
+            <div class="showcase__item-spacing-wrapper">
+                <div class="showcase__label">{{ item.label }}</div>
+                <h3 class="showcase__item-heading">{{ item.title }}</h3>
+                <p class="showcase__item-paragraph">{{ item.text }}</p>
+                <a href="{{ item.buttonUrl }}" [class.main-button]="i % 2 !== 1" [class.secondary-button]="i % 2 === 1">{{ item.buttonText }}</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,160 @@
+<section class="customers-service__container">
+    <div class="customers-service__items-wrapper">
+        <ng-container *ngFor="let item of serviceItems; let i = index">
+            <ng-container [ngSwitch]="i">
+                <div *ngSwitchCase="4" class="customers-service__item-content special-style">
+                    <div class="customers-service__item-link item{{i + 1}}">
+                        <a target="_blank" rel="noopener noreferrer" href="https://meetings.hubspot.com/nikola-beloica/customer-meeting-jdm?uuid=36766ec0-e27c-433b-a167-bb80184e720b">
+                            {{ item.title }}
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div *ngSwitchDefault class="customers-service__item cursor-container item{{i + 1}}" (click)="openOverlay(item)">
+                    <div class="overlay"></div>
+                    <div class="customers-service__item-content ">
+                        <div class="item-content__heading-wrapper">
+                            <div class="item-content__heading">
+                                {{ item.title }}
+                            </div>
+                            <div class="item-content__subheading">
+                                {{ item.subtitle }}
+                            </div>
+                        </div>
+                        <p class="item-content__paragraph">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </ng-container>
+            
+        </ng-container>
+
+        <!-- <div class="customers-service__item item1 cursor-container" (click)="openOverlay()">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content ">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        Full Truck Load
+                    </div>
+                    <div class="item-content__subheading">
+                        $ 1.000.000 VALUE CARGO
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    As a logistics company with top-notch equipment and extensive knowledge, we are confident in our ability to meet your needs.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item item2 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        Expedite
+                    </div>
+                    <div class="item-content__subheading">
+                        READY WHEN YOU ARE
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Fast driving isn't the point; the point it is to think and prepare quickly. If you are in a hurry, we can put our recourses to help you achieve your goals.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item item3 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        Trailer Pool
+                    </div>
+                    <div class="item-content__subheading">
+                        MORE THAN 1000 TRAILERS
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Don't waste time and money. Be flexible with loading and unloading. Reduce detention and plan ahead.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item item4 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        Dedicated
+                    </div>
+                    <div class="item-content__subheading">
+                        MORE THAN 300 TRUCKS
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Keep a good bond with your clients by providing excellent service. We have a fleet that can help you transport your cargo anywhere in the United States on time.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item-link item5">
+            <a target="_blank" rel="noopener noreferrer" href="https://meetings.hubspot.com/nikola-beloica/customer-meeting-jdm?uuid=36766ec0-e27c-433b-a167-bb80184e720b">
+                GET IN TOUCH WITH US 
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </a>
+        </div>
+        <div class="customers-service__item feature-item item6 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        EDI Integration
+                    </div>
+                    <div class="item-content__subheading">
+                        MAKE IT EASIER
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Save the forest and make communication flow easier and faster. Our company is able to set up an EDI system that will ease communication with business partners.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item feature-item item7 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        Available Trucks
+                    </div>
+                    <div class="item-content__subheading">
+                        REAL TIME INSIGHT
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Grab your truck NOW! A real-time view of our available vehicles and all the relevant information may be seen here. It's easy to get along with our team. Try it out.
+                </p>
+            </div>
+        </div>
+        <div class="customers-service__item feature-item item8 cursor-container">
+            <div class="overlay"></div>
+            <div class="customers-service__item-content">
+                <div class="item-content__heading-wrapper">
+                    <div class="item-content__heading">
+                        24/7 Load Tracking
+                    </div>
+                    <div class="item-content__subheading">
+                        ROUND THE CLOCK
+                    </div>
+                </div>
+                <p class="item-content__paragraph">
+                    Knowing exactly where your cargo is at all times is a huge stress reliever. Every one of our customers is getting this king of service from us.
+                </p>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<div class="cursor-bg" #cursorBg></div>
+<div class="cursor-text" #cursorText>VIEW SERVICE</div>

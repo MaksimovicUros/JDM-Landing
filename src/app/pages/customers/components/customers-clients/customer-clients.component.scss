@@ -1,0 +1,60 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+
+.banner__clients-container {
+    max-width: 1325px;
+    margin: 0 auto;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    text-align: center;
+    color: $mainWhite;
+
+     @include respond(lg) {
+        padding-bottom: 400px;
+    }
+}
+
+.banner__clients-h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+
+    @include respond(lg) {
+        font-size: 100px;
+    }
+}
+
+.banner__clients-paragraph {
+    width: 80%;
+    margin: 0 auto 50px auto;
+
+    @include respond(xxl) {
+        width: 100%;
+    }
+}
+
+.banner__clients-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+    margin-top: 100px;
+    padding-top: 100px;
+
+    @include respond(smd) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(lg) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include respond(xxl) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,206 @@
+@import '_fonts.scss';
+@import '_reset.scss';
+@import '_buttons.scss';
+@import '_colors.scss';
+@import '_inputs.scss';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+// ----- customers page -----
+
+.h1-customers {
+  font-size: $font-size-customers-h1-xs;
+
+  @include respond(md) {
+    font-size: $font-size-customers-h1-md;
+  }
+
+  @include respond(lg) {
+    font-size: $font-size-customers-h1-lg;
+  }
+}
+
+.h2-customers {
+  font-size: $font-size-customers-h2-xs;
+
+  @include respond(lg) {
+    font-size: $font-size-customers-h2-lg;
+  }
+}
+
+.h3-customers {
+  font-size: $font-size-customers-h3-xs;
+
+  @include respond(lg) {
+    font-size: $font-size-customers-h3-lg;
+  }
+}
+
+.p-customers {
+  font-size: $font-size-customers-p-xs;
+}
+
+// ---- customers page end ---- 
+
+
+// drivers page
+
+.h1-drivers {
+  font-size: $font-size-drivers-h1-xs;
+
+  @include respond(md) {
+    font-size: $font-size-drivers-h1-md;
+  }
+
+  @include respond(lg) {
+    font-size: $font-size-drivers-h1-lg;
+  }
+}
+
+.h2-drivers {
+  font-size: $font-size-drivers-h2-xs;
+
+  @include respond(sm) {
+    font-size: $font-size-drivers-h2-sm;
+  }
+
+  @include respond(lg) {
+    font-size: $font-size-drivers-h2-lg;
+  }
+}
+
+.p-drivers {
+  font-size: 18px;
+}
+
+
+// ---- drivers page end -----
+
+h1 {
+    font-size: $font-size-main-heading-base;
+    font-weight: 800;
+
+    @include respond(xs) {
+      font-size: $font-size-main-heading-xs;
+    }
+
+    @include respond(sm) {
+      font-size: $font-size-main-heading-sm;
+    }
+
+    @include respond(smd) {
+      font-size: $font-size-main-heading-smd;
+    }
+
+    @include respond(lg) {
+      font-size: $font-size-main-heading-lg;
+    }
+
+    @include respond(xl) {
+      font-size: $font-size-main-heading-xl;
+    }
+}
+
+h2 {
+    font-weight: 800;
+    font-size: $font-size-h2-xs;
+
+    @include respond(sm) {
+      font-size: $font-size-h2-sm;
+    }
+
+    @include respond(smd) {
+      font-size: $font-size-h2-smd;
+    }
+
+     @include respond(lg) {
+      font-size: $font-size-h2-lg;
+    }
+}
+
+h3 {
+    font-size: $font-size-h3-xs;
+    font-weight: 800;
+
+    @include respond(smd) {
+      font-size: $font-size-h3-smd;
+    }
+}
+
+h4 {
+  font-size: $font-size-h4-xs;
+  font-weight: 800;
+
+  @include respond(smd) {
+    font-size: $font-size-h4-smd;
+  }
+}
+
+h5 {
+    font-weight: bold;
+    font-size: $font-size-h5-mobile;
+}
+
+h6 {
+    font-weight: 800;
+    font-size: $font-size-h6-mobile;
+
+    @include respond(smd) {
+      font-size: $font-size-h6-smd;
+    }
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.white-color {
+  color: $mainWhite !important;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.smd-mb-0 {
+  @include respond(smd) {
+    margin-bottom: 0 !important;    
+  }
+}
+
+.color-main-yellow {
+  color: $mainYellow;
+}
+
+.link-active {
+  color: $mainBlueNew !important;
+}
+
+.lg-row {
+    @include respond(lg) {
+        display: flex;
+        gap: 25px;
+
+        .input-wrapper {
+            flex: 1;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<app-drivers-header></app-drivers-header>
+<section class="team__banner-section">
+    <video loop autoplay muted playsinline preload="auto" id="team-banner-video">
+        <source src="assets/images/drivers/team-driver/team-drivers.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="team__banner-text-wrapper">
+        <h1 class="team__banner-h1">Team Drivers</h1>
+        <p class="text-animate p-drivers d-lg mb-15">
+            Success is certain when two great drivers cross paths and choose to cooperate.
+            <br>
+            Meet Branda and Eddie. They've been driving with JDM for a long time and drive more than 6,500 miles every week.
+        </p>
+        <a class="main-button" href="drivers/contact">Contact Us</a>
+    </div>
+</section>
+<div class="section-video__component-wrapper">
+    <app-section-with-video [data]="sectionVideoItem">
+        <iframe src="https://www.youtube.com/embed/Ullkwih6Q10?si=ZLxDzjb2uhE_ItCO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </app-section-with-video>
+</div>
+<div class="showcase__component-wrapper">
+    <app-showcase-section [data]="firstShowcaseData"></app-showcase-section>
+</div>
+<app-slider [data]="sliderItems"></app-slider>
+<div class="showcase__component-wrapper">
+    <app-showcase-section [data]="secondShowcaseData"></app-showcase-section>
+</div>
+<app-operating-area [data]="operatingItem"></app-operating-area>
+<div class="showcase__component-wrapper">
+    <app-showcase-section [data]="thirdShowcaseData"></app-showcase-section>
+</div>
+<app-comments [data]="commentsData"></app-comments>
+<app-discount [data]="discountData"></app-discount>
+<app-drivers-footer-nav></app-drivers-footer-nav>
+<app-footer></app-footer>

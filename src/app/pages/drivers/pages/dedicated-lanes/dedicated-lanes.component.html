@@ -1,0 +1,62 @@
+<app-drivers-header></app-drivers-header>
+<section class="lanes__banner">
+    <div class="banner-overlay"></div>
+    <video loop autoplay muted playsinline preload="auto" id="lanes-video">
+        <source src="assets/images/drivers/dedicated-lanes/USA-map.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="lanes__banner-text-wrapper">
+        <h1>Dedicated Lanes</h1>
+        <p class="mb-20">
+            This is a great position for drivers who want to take driving to the next level. Having a dedicated lane means deep knowledge of the route, stable income, and consistent business.
+        </p>
+        <p class="mb-20">The benefits of being a dedicated truck driver are mostly related to reliability in terms of mileage and schedule.</p>
+        <a class="main-button" href="drivers/contact">Get Started</a>
+    </div>
+</section>
+<section class="five-things__section">
+    <div class="five-things__wrapper">
+        <h2 class="five-things__heading">5 Things About Dedicated Lanes that Our Drivers Like:</h2>
+        <p class="five-things__main-text">With over 80,000 customers on the books, let's find the lanes that are perfect for you.</p>
+        <div #container class="five-things__items-wrapper">
+            <div class="five-things__item">
+                <img loading="lazy" src="assets/images/drivers/dedicated-lanes/number-1.png" alt>
+                <h3>Guaranteed Mileage</h3>
+                <p>With dedicated lanes, the driver knows exactly how many miles he will drive each week.</p>
+            </div>
+            <div class="five-things__item">
+                <img loading="lazy" src="assets/images/drivers/dedicated-lanes/number-2.png" alt>
+                <h3>Fixed Schedule</h3>
+                <p>It allows our drivers to plan every part of their schedules, which results in an excellent work-life balance.</p>
+            </div>
+            <div class="five-things__item">
+                <img loading="lazy" src="assets/images/drivers/dedicated-lanes/number-3.png" alt>
+                <h3>Knowledge of The Route</h3>
+                <p>There is no room for surprises. Knowing the route makes driving more enjoyable for our drivers.</p>
+            </div>
+            <div class="five-things__item">
+                <img loading="lazy" src="assets/images/drivers/dedicated-lanes/number-4.png" alt>
+                <h3>Constant Business</h3>
+                <p>Reliability. Stability and a long-term cooperation are the basis of JDM’s cooperation with our clients.</p>
+            </div>
+            <div class="five-things__item">
+                <img loading="lazy" src="assets/images/drivers/dedicated-lanes/number-5.png" alt>
+                <h3>Stable Income</h3>
+                <p>Drivers simply know all aspect of their job with this program, especially in terms of pay.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="lanes-map__section">
+    <div class="buttons-wrapper">
+        <button class="solo-button" [class.active]="selected === 'solo'" (click)="setActive('solo')">Solo lanes</button>
+        <button class="team-button" [class.active]="selected === 'team'"  (click)="setActive('team')">Team lanes</button>
+    </div>
+    <div class="lanes__google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163004.31094384068!2d-96.22549391054643!3d41.291882901921454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87938dc8b50cfced%3A0x46424d4fae37b604!2z0J7QvNCw0YXQsCwg0J3QtdCx0YDQsNGB0LrQsCwg0KHRmNC10LTQuNGa0LXQvdC1INCU0YDQttCw0LLQtQ!5e1!3m2!1ssr!2srs!4v1756143629205!5m2!1ssr!2srs" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <a class="main-button" href="drivers/contact">Contact Us</a>
+</section>
+<app-newsletter></app-newsletter>
+<app-drivers-footer-nav></app-drivers-footer-nav>
+<app-footer></app-footer>

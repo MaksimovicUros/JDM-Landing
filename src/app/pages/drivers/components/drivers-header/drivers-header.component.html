@@ -1,0 +1,64 @@
+<header class="drivers-header">
+    <div class="drivers-header__wrapper">
+        <div class="logo-wrapper" [routerLink]="['/drivers']">
+            <img class="logo" loading="lazy" src="assets/images/logo.svg" alt="company logo">
+        </div>
+
+        <div class="drivers-header__content">
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" (click)="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="menu__container" [class.open]="isMobileMenuOpen">
+            <ul class="menu__list">
+                <li class="menu__list-item">
+                    <a class="menu__list-item-link" rel="noopener noreferrer" href="">
+                        CONTRACTORS 
+                        <span class="material-symbols-outlined submenu-arrow">
+                            keyboard_arrow_down
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                      <li class="submenu__item">
+                        <a appActiveLink="/drivers/owner-operators" href="drivers/owner-operators" class="submenu__link">OWNER OPERATORS</a>
+                      </li>
+                      <li class="submenu__item">
+                        <a appActiveLink="/drivers/rent-equipment" href="drivers/rent-equipment" class="submenu__link">TRUCK RENTALS</a>
+                      </li>
+                    </ul>
+                </li>
+                <li class="menu__list-item">
+                    <a class="menu__list-item-link" rel="noopener noreferrer" href="">
+                        COMPANY DRIVERS
+                        <span class="material-symbols-outlined submenu-arrow">
+                            keyboard_arrow_down
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                      <li class="submenu__item">
+                        <a appActiveLink="/drivers/solo" href="drivers/solo" class="submenu__link">SOLO DRIVERS</a>
+                      </li>
+                      <li class="submenu__item">
+                        <a appActiveLink="/drivers/team" href="drivers/team" class="submenu__link">TEAM DRIVERS</a>
+                      </li>
+                    </ul>
+                </li>
+                <li class="menu__list-item">
+                    <a appActiveLink="/drivers/dedicated-lanes" class="menu__list-item-link" rel="noopener noreferrer" href="drivers/dedicated-lanes">DEDICATED LANES</a>
+                </li>
+                <li class="menu__list-item">
+                    <a appActiveLink="/drivers/rent-equipment" class="menu__list-item-link" rel="noopener noreferrer" href="drivers/rent-equipment">RENT EQUIPMENT</a>
+                </li>
+                <li class="menu__list-item">
+                    <a appActiveLink="/drivers/blog" class="menu__list-item-link" rel="noopener noreferrer" href="drivers/blog">BLOG</a>
+                </li>
+                 <li class="menu__list-item">
+                    <a class="menu__list-item-link full-application-list-item" rel="noopener noreferrer" href="https://forms.jdmexpedite.com">FULL APPLICATION</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

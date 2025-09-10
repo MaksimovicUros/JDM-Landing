@@ -1,0 +1,28 @@
+<section class="discount__section">
+    <div class="discount__text-wrapper">
+        <div class="discount__heading-wrapper" [innerHTML]="data.titleHtml"></div>
+        <p>{{ data.text }}</p>
+        <a href="drivers/contact" class="main-button">{{ data.buttonText }}</a>
+        <div class="discount__logos-wrapper">
+            <img loading="lazy" class="shield-logo" src="assets/images/discount/shield-tier.png" alt="shield logo">
+            <img
+            class="smartway-logo"
+            loading="lazy"
+            decoding="async"
+            width="314"
+            height="80"
+            src="assets/images/discount/Smartway-80px.png"
+            alt="Smartway logo"
+            title="Smartway 80px"
+            srcset="
+              assets/images/discount/Smartway-80px.png 314w,
+              assets/images/discount/Smartway-80px-300x76.png 300w
+            "
+            sizes="(max-width: 314px) 100vw, 314px"
+            />
+        </div>
+    </div>
+    <div class="discount__newsletter-wrapper">
+        <app-newsletter></app-newsletter>
+    </div>
+</section>

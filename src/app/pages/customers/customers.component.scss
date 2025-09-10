@@ -1,0 +1,146 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+
+//customers-word
+
+.customers-word__container {
+    background-color: $customerBannerBkg;
+    padding: 100px 32px;
+    color: $mainWhite;
+    min-height: 100dvh;
+
+    @include respond(lg) {
+        padding: 100px;
+        padding-top: 200px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        word-break: break-word;
+
+        @include respond(lg) {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+.customers-word__wrapper {
+    max-width: 1325px;
+    margin: 0 auto;
+}
+
+.customers-word__items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+
+    @include respond(lg) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include respond(xl) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* responsive columns */
+    }
+}
+
+.customers-word__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.customers-word__item-main-text {
+    margin-bottom: 25px;
+}
+
+//----end customers-word-----
+
+
+//work together
+
+.customers-work-together__container {
+    background-color: $customerBannerBkg;
+    padding: 100px 32px;
+    color: $mainWhite;
+    text-align: center;
+    min-height: 100dvh;
+
+    @include respond(lg) {
+        padding: 100px;
+        padding-top: 200px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        word-break: break-word;
+
+        @include respond(lg) {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+.customers-work-together_wrapper {
+    max-width: 1325px;
+    margin: 0 auto;
+}
+
+.customers-work__logo {
+    margin: 0 auto 50px auto;
+}
+
+.customers-word-together__buttons-wrapper {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    @include respond(md) {
+        flex-direction: row;
+    }
+
+    .book-button {
+        text-decoration: none;
+        padding: 25px 50px;
+        background-color: $mainWhite;
+        color: $mainBlack;
+        border: 1px solid transparent;
+
+        @include respond(lg) {
+            padding: 15px 25px;
+        }
+
+        @include respond(xl) {
+            font-size: 20px;
+            padding: 15px 40px;
+        }
+    }
+
+    .contact-button {
+        text-decoration: none;
+        background-color: $mainBlueNew;
+        padding: 25px 50px;
+        color: $mainWhite;
+        border: 1px solid $mainWhite;
+
+        @include respond(lg) {
+            padding: 15px 25px;
+        }
+
+        @include respond(xl) {
+            font-size: 20px;
+            padding: 15px 40px;
+        }
+    }
+}
+
+//----end work together---

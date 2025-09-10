@@ -1,0 +1,69 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.newsletter-container {
+    padding: 40px 20px;
+    
+    background-color: $discountBkg;
+
+    @include respond(md) {
+        padding: 50px 20px;
+    }
+}
+
+.newsletter_wrapper {
+        max-width: 1325px;
+        margin: 0 auto;
+
+        @include respond(lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .newsletter__h2 {
+        color: $mainWhite;
+        margin-bottom: 50px;
+        font-size: 25px;
+        opacity: 0;
+        
+        &.animate {
+            animation: fadeIn $main-animation-duration ease-in $main-animation-delay forwards;
+        }
+
+        @include respond(md) {
+            font-size: 35px;
+            width: 50%;
+        }
+
+        @include respond(lg) {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        @include respond(xl) {
+            width: 40%;
+        }
+    }
+
+    .input-with-button {
+         @include respond(lg) {
+            width: 50%;
+        }
+
+        @include respond(xl) {
+            width: 40%;
+        }
+    }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

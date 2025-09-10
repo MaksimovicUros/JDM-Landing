@@ -1,0 +1,157 @@
+@import '_typography.scss';
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.landing {
+    min-height: 100dvh;
+    padding-top: 70px;
+    text-align: center;
+
+    .main-button, .secondary-button {
+        width: 60%;
+
+        @include respond(md) {
+            width: 350px;
+        }
+    }
+}
+
+.landing__heading {
+    color: $mainBlack; /* Fallback for older browsers */
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    animation: appearBlurAnim $main-animation-duration ease-out $main-animation-delay forwards;
+
+    @include respond(lg) {
+        margin-top: 120px;
+    }
+}
+
+.landing__content-item-wrapper {
+    margin-bottom: 30px;
+}
+
+.landing__subheading {
+    color: $mainWhite;
+    margin-bottom: 10px;
+}
+
+.landing__content {
+    align-self: center;
+}
+
+.landing__content-item-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: appearBlurAnimAbsolute $main-animation-duration ease-out ($main-animation-delay + 0.3) forwards;
+
+    @include respond(lg) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    @include respond(xl) {
+        gap: 90px;
+    }
+}
+
+.landing__social-wrapper {
+    position: absolute;
+    top: 55%;
+    left: 10px;
+    transform: translateY(-50%);
+
+     @include respond(lg) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.landing__social-item {
+    svg {
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+            filter: $mainBlueFilter;
+        }
+
+        @include respond(md) {
+            width: 26px;
+            height: 26px;
+        }
+    }
+}
+
+.appear-1, .appear-2, .appear-3, .appear-4 {
+    opacity: 0;
+}
+
+.appear-1 {
+    animation: appearSideAnim $main-animation-duration ease-in $main-animation-delay forwards;
+}
+
+.appear-2 {
+    animation: appearSideAnim $main-animation-duration ease-in ($main-animation-delay + 0.2s) forwards;
+}
+
+.appear-3 {
+    animation: appearSideAnim $main-animation-duration ease-in ($main-animation-delay + 0.4s) forwards;
+}
+
+.appear-4 {
+    animation: appearSideAnim $main-animation-duration ease-in ($main-animation-delay + 0.6s) forwards;
+}
+
+@keyframes appearBlurAnim {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes appearBlurAnimAbsolute {
+  0% {
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes appearSideAnim {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

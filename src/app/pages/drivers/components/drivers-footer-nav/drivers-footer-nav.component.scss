@@ -1,0 +1,205 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.footer__nav-section {
+    background-image: url('/assets/images/drivers/footer/grey-truck-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 20px;
+    color: $mainWhite;
+
+    @include respond(lg) {
+       padding: 100px 50px;
+    }
+}
+
+.nav-section__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    max-width: 1355px;
+    margin: 0 auto;
+
+    @include respond(md) {
+       grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(lg) {
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.footer__logo {
+    margin-bottom: 30px;
+}
+
+.nav-section__item {
+    p {
+        font-size: 16px;
+    }
+
+    .nav-section__item-heading {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+.nav-section__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .nav-section__list-item {
+        .nav-section__list-item-link {
+            text-decoration: none;
+            transition: color $main-animation-duration ease-in-out;
+            color: $mainWhite;
+            font-weight: 500;
+
+            &:hover {
+                color: $mainBlueNew;
+            }
+        }
+    }
+}
+
+.terms__wrapper {
+    max-width: 1355px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include respond(lg) {
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+    }
+}
+
+.footer__terms-container {
+    background-color: $footerNavTermsBkg;
+    padding: 30px 10px;
+    color: $mainWhite;
+   
+    
+    @include respond(lg) {
+        padding: 30px;
+    }
+
+    .terms__text-wrapper {
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .terms__links-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        @include respond(md) {
+            flex-direction: row;
+        }
+
+        .terms__link {
+            text-decoration: none;
+            transition: color $main-animation-duration ease-in-out;
+            color: $mainWhite;
+            font-weight: 500;
+
+            &:hover {
+                color: $mainBlueNew;
+            }
+        }
+    }
+}
+
+.slide-up-1, .slide-up-2, .slide-up-3, .slide-up-4 {
+    @include respond(lg) {
+        opacity: 0;
+    }
+}
+
+.slide-up-1 {
+    &.animate {
+        animation: appearSideAnim $main-animation-duration ease-in forwards;
+    }
+}
+
+.slide-up-2 {
+    &.animate {
+        animation: appearSideAnim $main-animation-duration ease-in 0.2s forwards;
+    }
+}
+
+.slide-up-3 {
+    &.animate {
+        animation: appearSideAnim $main-animation-duration ease-in 0.4s forwards;
+    }
+}
+
+.slide-up-4 {
+     &.animate {
+        animation: appearSideAnim $main-animation-duration ease-in 0.6s forwards;
+    }
+}
+
+.slide-from-left, .slide-from-right {
+    @include respond(lg) {
+        opacity: 0;
+    }
+}
+
+.slide-from-left {
+    &.animate {
+        animation: appearFromLeftAnim $main-animation-duration ease-in forwards;
+    }
+}
+.slide-from-right {
+    &.animate {
+        animation: appearFromRightAnim $main-animation-duration ease-in forwards;
+    }
+}
+
+@keyframes appearSideAnim {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearFromLeftAnim {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearFromRightAnim {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

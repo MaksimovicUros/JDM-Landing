@@ -1,0 +1,63 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.solo__orientation {
+    padding: 30px 32px;
+}
+
+.orientation__wrapper {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: $orientetionBkg;
+    color: $mainWhite;
+
+    @include respond(md) {
+        text-align: start;
+        padding: 60px;
+    }
+
+    @include respond(lg) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include respond(xxl) {
+        padding: 60px 200px;
+    }
+
+    .secondary-button {
+        width: 100%;
+        max-width: 240px;
+        margin-bottom: 50px;
+        font-size: 18px;
+    }
+
+    .p-drivers {
+        line-height: 1.8em;
+    }
+}
+
+.orientation__yt-video {
+    width: 100%;
+
+    @include respond(md) {
+        height: 400px;
+    }
+}
+
+::ng-deep {
+    .orientation__yt-video {
+    iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+}
+
+}

@@ -1,0 +1,27 @@
+<app-drivers-header></app-drivers-header>
+<section class="solo__banner-section">
+    <video loop autoplay muted playsinline preload="auto" id="solo-banner-video">
+        <source src="assets/images/drivers/solo-driver/solo-driver-cover.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="solo__banner-text-wrapper">
+        <h1 class="solo__banner-h1">Solo Drivers</h1>
+        <p class="text-animate p-drivers d-lg mb-15">Each CDL A experienced truck driver is aware that choosing the right company and people who will value and reward them is the first step towards great career in trucking.</p>
+        <a class="secondary-button" href="drivers/contact">Contact Us</a>
+        <a class="main-button" href="drivers/contact">Contact Us</a>
+    </div>
+</section>
+<div class="showcase__component-wrapper">
+    <app-showcase-section [data]="showcaseData"></app-showcase-section>
+</div>
+<app-slider [data]="sliderItems"></app-slider>
+<div class="section-video__component-wrapper">
+    <app-section-with-video [data]="sectionVideoItem">
+        <iframe src="https://www.youtube.com/embed/Ullkwih6Q10?si=ZLxDzjb2uhE_ItCO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </app-section-with-video>
+</div>
+<app-operating-area [data]="operatingItem"></app-operating-area>
+<app-comments [data]="commentsData"></app-comments>
+<app-discount [data]="discountData"></app-discount>
+<app-drivers-footer-nav></app-drivers-footer-nav>
+<app-footer></app-footer>

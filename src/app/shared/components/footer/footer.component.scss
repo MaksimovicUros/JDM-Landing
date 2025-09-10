@@ -1,0 +1,49 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.footer {
+    background-color: $mainYellow;
+    padding: 20px 30px;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    max-width: 1355px;
+    margin: 0 auto;
+    color: $mainWhite;
+
+    @include respond(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+.footer__social-icons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.footer__social-item {
+    svg {
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+            filter: $mainBlueFilter;
+        }
+
+        @include respond(md) {
+            width: 26px;
+            height: 26px;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<section class="solo__orientation">
+    <div class="orientation__wrapper">
+        <div class="orientation__text-wrapper">
+            <h2 class="h2-drivers mb-15">
+                {{ data.title }}
+            </h2>
+            <div class="mb-15" [innerHTML]="data.textInnerHtml"></div>
+            <a href="drivers/contact" class="secondary-button">{{ data.buttonText }}</a>
+        </div>
+        <div class="orientation__yt-video">
+             <ng-content></ng-content>
+        </div>
+    </div>
+</section>

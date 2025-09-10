@@ -1,0 +1,54 @@
+<app-drivers-header></app-drivers-header>
+<section class="owner__banner-section">
+    <video loop autoplay muted playsinline preload="auto" id="owner-banner-video">
+        <source src="assets/images/drivers/owner-operators/owner-cover.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="owner__banner-text-wrapper">
+        <h1 class="owner__banner-h1">Owner Operators</h1>
+        <p class="text-animate p-drivers d-lg mb-15">There is no room for downtime with dedicated support teams and features created exclusively for our Owner Ops division.</p>
+        <a class="main-button" href="drivers/contact">Contact Us</a>
+    </div>
+</section>
+<div class="owner__showcase-box-wrapper">
+    <app-drivers-showcase-boxes [data]="showcaseBoxItems"></app-drivers-showcase-boxes>
+</div>
+<div class="owner__heading-wrapper">
+    <h2 class="owner__heading h2-drivers">3 Things</h2>
+    <h2 class="owner__heading h2-drivers">That Our Owner Ops Like...</h2>
+</div> 
+<div class="owner__showcase-box-wrapper">
+    <app-drivers-showcase-boxes [data]="secondShowcaseBoxItems"></app-drivers-showcase-boxes>
+</div>
+<section #softwareSection class="owner__software-section">
+    <div class="software__wrapper">
+        <div class="software__item">
+            <div #appearFromLeft class="software__item-image-wrapper">
+                <img loading="lazy" src="assets/images/drivers/owner-operators/software/load-board.png" alt>
+            </div>
+            <div class="software__item-text-wrapper">
+                <h3>AI-based JDM Load Board Software</h3>
+                <p class="mb-20">We set out with the goal of quickly finding the highest paying loads for our drivers. Our time for booking high-quality loads has now been minimized thanks to our team of developers.</p>
+                <p>Excellent truck utilization as a result directly leads to higher pay for our drivers.</p>
+                <a #fadeIn href="drivers/contact" class="secondary-button">Contact Us</a>
+            </div>
+        </div>
+        <div class="software__item">
+            <div #appearFromLeft class="software__item-image-wrapper">
+                <img loading="lazy" src="assets/images/drivers/owner-operators/software/load-source.png" alt>
+            </div>
+            <div class="software__item-text-wrapper">
+                <h3>Load Source Analysis</h3>
+                <ul>
+                    <li>55% are directly with the shipper.</li>
+                    <li>30% through our JDM Load Board Software</li>
+                    <li>15% through DAT or other loads boards</li>
+                </ul>
+                <a #fadeIn href="drivers/contact" class="secondary-button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<app-comments [data]="commentsData"></app-comments>
+<app-drivers-footer-nav></app-drivers-footer-nav>
+<app-footer></app-footer>

@@ -1,0 +1,271 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.banner-h1 {
+    font-size: 25px;
+    height: 29px;
+
+    @include respond(xs) {
+       font-size: 30px;
+       height: 36px;
+    }
+
+    @include respond(sm) {
+       font-size: 34px;
+       height: 40px;
+    }
+
+    @include respond(smd) {
+       font-size: 54px;
+       height: 63px;
+    }
+
+    @include respond(lg) {
+       font-size: 98px;
+       height: 115px;
+    }
+
+    @include respond(xxl) {
+       font-size: 120px;
+       height: 140px;
+    }
+}
+
+.banner-h4 {
+    font-size: 11px;
+    height: 11px;
+    margin-bottom: 20px;
+
+    @include respond(xs) {
+       font-size: 14px;
+       height: 14px;
+    }
+
+    @include respond(sm) {
+       font-size: 15px;
+       height: 15px;
+    }
+
+    @include respond(smd) {
+       font-size: 19px;
+       height: 19px;
+       margin-bottom: 40px;
+    }
+
+    @include respond(lg) {
+       font-size: 26px;
+       height: 26px;
+       margin-bottom: 50px;
+    }
+
+    @include respond(xxl) {
+       font-size: 32px;
+       height: 32px;
+       margin-bottom: 50px;
+    }
+}
+
+.customers-banner__container {
+    padding-top: 100px;
+    background-color: $customerBannerBkg;
+    min-height: 100dvh;
+
+    @include respond(smd) {
+        padding-top: 250px;
+    }
+
+    @include respond(lg) {
+        padding-top: 100px;
+    }
+}
+
+.banner__video-wrapper {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 365px;
+
+    @include respond(smd) {
+        height: 347px;
+        margin: 10% auto 0 auto;
+        max-width: 526px;
+    }
+
+    @include respond(lg) {
+        height: auto;
+        max-width: 930px;
+    }
+
+    @include respond(xl) {
+        max-width: 930px;
+    }
+
+    @include respond(xl) {
+        max-width: 1100px;
+    }
+
+     @include respond(xxl) {
+        max-width: 1200px;
+    }
+
+
+    #customers-banner-video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.banner__video-text-wrapper {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: $mainWhite;
+
+    @include respond(smd) {
+        left: -10px;
+        top: -110px;
+    }
+
+    @include respond(lg) {
+        left: 100px;
+        top: 50px;
+    }
+
+    @include respond(xl) {
+        left: 50px;
+        top: 50px;
+    }
+
+    @include respond(hd) {
+        left: -200px;
+        top: 50px;
+    }
+}
+
+.text-up-slide-animation {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+
+    @include respond(xs) {
+        width: 200px;
+    }
+
+    @include respond(smd) {
+       width: 500px;
+    }
+
+     @include respond(lg) {
+       width: 800px;
+    }
+
+    span {
+        position: absolute;
+        transform: translateY(100%); /* start below */
+        animation: slideUp $main-animation-duration ease-out forwards;
+    }
+}
+
+.video-text__get-started-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 150px;
+
+    @include respond(xs) {
+        margin-top: 50px;
+    }
+
+    @include respond(smd) {
+        margin-top: 150px;
+        padding-left: 20px;
+    }
+
+    @include respond(lg) {
+        margin-top: 20px;
+    }
+
+    @include respond(xl) {
+        margin-top: 50px;
+        padding-left: 80px;
+    }
+
+    @include respond(xxl) {
+        margin-top: 100px;
+    }
+
+    @include respond(hd) {
+        margin-top: 200px;
+        padding-left: 200px;
+    }
+
+    .get-started-link {
+        font-size: 8px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        border-bottom: 1px solid $customerBannerBkg;
+        letter-spacing: 1px;
+        transform: translateY(100%); /* start below */
+        animation: slideUp $main-animation-duration ease-out forwards;
+
+        @include respond(xs) {
+            font-size: 10px;
+        }
+
+        @include respond(smd) {
+            font-size: 12px;
+        }
+        
+        @include respond(xl) {
+            letter-spacing: 2px;
+            font-size: 16px;
+            padding-right: 20px;
+        }
+    }
+
+    .video-text__get-started-text-box {
+        width: 60%;
+        background-color: $customerBannerBkg;
+        padding: 12px 20px;
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 15px;
+        transform: translateY(100%); /* start below */
+        animation: slideUp $main-animation-duration ease-out forwards;
+
+        @include respond(xs) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        @include respond(smd) {
+            line-height: 23px;
+        }
+
+        @include respond(lg) {
+            padding: 40px 64px;
+        }
+
+        @include respond(xl) {
+            padding: 50px 80px;
+            font-size: 18px;
+            line-height: 35px;
+        }
+    }
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

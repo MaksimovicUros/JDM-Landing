@@ -1,0 +1,268 @@
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_variables.scss';
+@import '_typography.scss';
+
+.overlay-content {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden; // Changed from scroll to hidden
+  background-color: $customerBannerBkg;
+  color: $mainWhite;
+  padding: 0 10px;
+  position: relative;
+
+  section {
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform; // Optimize for animations
+    
+    // Ensure content is properly positioned
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+    
+    // Optional overlay for better text visibility on background images
+    &:not(:first-child):before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $customerBannerBkg;
+      z-index: 1;
+    }
+  }
+  
+  // First section doesn't need the overlay
+  section:first-child:before {
+    display: none;
+  }
+}
+
+.back-wrapper {
+  position: fixed; // Changed from absolute to fixed
+  top: 15px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 4px;
+  color: $mainWhite;
+  transition: color $main-animation-duration ease-in-out;
+  font-size: 18px;
+  font-weight: bold;
+
+  &:hover {
+    color: $lightBlue;
+  }
+
+  @include respond(lg) {
+    top: 30px;
+    left: 50px;
+  }
+
+  .arrow {
+    color: $lightBlue;
+    transition: color $main-animation-duration ease-in-out;
+    font-size: 32px;
+
+    &:hover {
+      color: $mainWhite;
+    }
+  }
+}
+
+.overlay__title {
+  margin: 100px 20px;
+  font-size: 38px;
+
+  @include respond(sm) {
+    font-size: 51px;
+  }
+
+  @include respond(md) {
+    font-size: 72px;
+  }
+
+  @include respond(lg) {
+    font-size: 77px;
+    margin: 100px;
+    align-self: flex-start;
+  }
+}
+
+.overlay__banner-image-wrapper {
+  padding: 0 10px;
+
+  @include respond(lg) {
+    padding: 0 20px;
+  }
+}
+
+.overlay__banner-image {
+  min-height: 50dvh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.overlay__text-wrapper {
+  padding: 0 20px;
+
+  @include respond(sm) {
+    font-size: 21px;
+  }
+
+  @include respond(lg) {
+    padding: 20px 80px;
+    width: 80%;
+    align-self: flex-end;
+    font-size: 31px;
+
+    .overlay__text-smaller {
+      font-size: 19px;
+    }
+  }
+
+  @include respond(xxl) {
+    width: 50%;
+    font-size: 40px;
+    padding: 20px 200px;
+
+    .overlay__text-smaller {
+      font-size: 25px;
+    }
+  }
+}
+
+.overlay__value-item {
+  text-align: end;
+  align-self: flex-end;
+  font-size: 15px;
+  font-weight: bold;
+  padding-right: 25px;
+
+  @include respond(sm) {
+    font-size: 21px;
+  }
+
+  @include respond(md) {
+    font-size: 28px;
+    padding-right: 50px;
+  }
+
+  @include respond(lg) {
+    font-size: 33px;
+  }
+
+  @include respond(xl) {
+    padding-right: 200px;
+    font-size: 39px;
+  }
+
+  .value-item__value {
+    color: $lightBlue;
+  }
+}
+
+.overlay__value-images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 0 10px;
+  margin-top: 50px;
+
+  @include respond(smd) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(lg) {
+    padding: 0 20px;
+  }
+}
+
+.project-secton__wrapper {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.project-section__heading {
+  font-size: 26px;
+  font-weight: bold;
+
+  @include respond(sm) {
+    font-size: 34px;
+  }
+
+  @include respond(md) {
+    font-size: 55px;
+  }
+
+  @include respond(lg) {
+    font-size: 61px;
+  }
+}
+
+.project-section__buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.project-section__blue-button {
+  color: $mainWhite;
+  transition: background-color 0.4s ease-in-out;
+  background-color: $darkBlue;
+  border-radius: 5px;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $lightBlue;
+  }
+}
+
+.project-section__close-button {
+  color: $mainWhite;
+  transition: border 0.4s ease-in-out;
+  border: 1px solid $mainWhite;
+  border-radius: 5px;
+
+  &:hover {
+    border: 1px solid transparent;
+  }
+}
+
+.project-section__blue-button, .project-section__close-button {
+  font-size: 11px;
+  padding: 10px 20px;
+
+  @include respond(sm) {
+    font-size: 15px;
+  }
+
+  @include respond(md) {
+    font-size: 18px;
+  }
+
+  @include respond(xxl) {
+    padding: 20px 40px;
+  }
+}
+

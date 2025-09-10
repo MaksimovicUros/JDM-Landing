@@ -1,0 +1,130 @@
+@import '_typography.scss';
+@import '_colors.scss';
+@import '_breakpoints.scss';
+@import '_spacing.scss';
+@import '_variables.scss';
+
+.commets__section {
+    background-color: $commentsBkg;
+    padding: 50px 0;
+
+    @include respond(lg) {
+        padding: 100px 0;
+    }
+}
+
+.comments__text-wrapper {
+    padding: 0px 20px;
+    margin-bottom: 50px;
+    text-align: center;
+
+    @include respond(lg) {
+        width: 80%;
+        margin: 0 auto 50px auto;
+        max-width: 800px;
+    }
+
+    h2 {
+        font-size: 25px;
+        margin-bottom: 50px;
+
+        @include respond(sm) {
+            font-size: 34px;
+        }
+
+        @include respond(lg) {
+            font-size: 48px;
+        }
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .main-button {
+        font-size: 18px;
+    }
+}
+
+.comments__items-wrapper {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    @include respond(lg) {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1325px;
+    }
+
+    .comments__item {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 47px 48px 0px rgba(100, 146, 188, 0.2);
+        border-radius: 5px;
+        height: fit-content;
+    }
+
+    .item__image-wrapper {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .item__text-wrapper {
+        background-color: $mainWhite;
+        padding: 20px;
+
+        @include respond(lg) {
+            padding: 40px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+}
+
+.comments__items-wrapper {
+    @include respond(lg) {
+        scale: 0;
+
+        &.animate {
+          animation: scaleUp $main-animation-duration ease-in  forwards;
+        }
+    }
+}
+
+.text-animate{
+    @include respond(lg) {
+        opacity: 0;
+        &.animate {
+          animation: fadeIn $main-animation-duration ease-in  forwards;
+        }
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
