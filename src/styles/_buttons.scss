@@ -1,58 +1,66 @@
-@import '_colors.scss';
-@import '_typography.scss';
-@import '_breakpoints.scss';
-@import 'variables.scss';
+@import "_colors.scss";
+@import "_typography.scss";
+@import "_breakpoints.scss";
+@import "variables.scss";
 
-.main-button, .secondary-button {
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 4px;
-    text-decoration: none;
-    padding: 14px 22px;
-    font-size: $font-size-xs;
-    transition: all $main-animation-duration ease-in-out;
-    font-weight: 500;
-    border: 1px solid transparent;
-    text-align: center;
+.main-button,
+.secondary-button {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 14px 22px;
+  font-size: $font-size-xs;
+  transition: all $main-animation-duration ease-in-out;
+  font-weight: 500;
+  border: 1px solid transparent;
+  text-align: center;
 
-    &:hover {
-        background-color: transparent;
-        border: 1px solid $mainWhite;
-    }
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $mainWhite;
+  }
 
-    @include respond(sm) {
-        font-size: $font-size-sm;
-    }
+  @include respond(sm) {
+    font-size: $font-size-sm;
+  }
 
-    @include respond(lg) {
-        font-size: $font-size-lg;
-    }
+  @include respond(lg) {
+    font-size: $font-size-lg;
+  }
 }
 
 .main-button {
-    background-color: $mainBlueNew;
-    color: $mainWhite;
+  background-color: $mainBlueNew;
+  color: $mainWhite;
+
+  &:disabled,
+  &.disabled {
+    background-color: lighten($mainBlueNew, 30%);
+    color: rgba($mainWhite, 0.6);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 }
 
 .secondary-button {
-    background-color: $mainWhite;
-    color: $mainBlack;
+  background-color: $mainWhite;
+  color: $mainBlack;
 
-    &:hover {
-        color: $mainWhite;
-    }
+  &:hover {
+    color: $mainWhite;
+  }
 }
 
 .drivers-main-button {
-
 }
 
 .drivers-secondary-button {
-    text-decoration: none;
-    font-weight: bold;
-    background-color: $mainWhite;
-    padding: 10px 20px;
-    color: $mainBlack;
-    border: 1px solid transparent;
-    border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: $mainWhite;
+  padding: 10px 20px;
+  color: $mainBlack;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }

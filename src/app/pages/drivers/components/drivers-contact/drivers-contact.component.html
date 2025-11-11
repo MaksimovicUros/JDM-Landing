@@ -1,52 +1,166 @@
 <app-drivers-header></app-drivers-header>
 <div class="drivers-contact__container">
-    <div class="drivers-contact__form-container">
-        <h1 class="driver-contact__heading">Driver Contact Form</h1>
-        <form class="drivers-contact__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="drivers-contact__form-container">
+    <h1 class="driver-contact__heading">Driver Contact Form</h1>
+    <form
+      class="drivers-contact__form"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="lg-row">
+        <input
+          class="main-input"
+          type="text"
+          placeholder="First Name"
+          formControlName="firstName"
+          [class.input-invalid]="
+            form.get('firstName')?.invalid &&
+            (form.get('firstName')?.touched || form.get('firstName')?.dirty)
+          "
+        />
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Last Name"
+          formControlName="lastName"
+          [class.input-invalid]="
+            form.get('lastName')?.invalid &&
+            (form.get('lastName')?.touched || form.get('lastName')?.dirty)
+          "
+        />
+      </div>
+      <div class="lg-row">
+        <input
+          class="main-input"
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          [class.input-invalid]="
+            form.get('email')?.invalid &&
+            (form.get('email')?.touched || form.get('email')?.dirty)
+          "
+        />
+        <input
+          class="main-input"
+          type="tel"
+          placeholder="Phone Number"
+          formControlName="phone"
+          [class.input-invalid]="
+            form.get('phone')?.invalid &&
+            (form.get('phone')?.touched || form.get('phone')?.dirty)
+          "
+        />
+      </div>
+      <input
+        class="main-input"
+        type="text"
+        placeholder="Zip Code"
+        formControlName="zip"
+        [class.input-invalid]="
+          form.get('zip')?.invalid &&
+          (form.get('zip')?.touched || form.get('zip')?.dirty)
+        "
+      />
+      <input
+        class="main-input"
+        type="text"
+        placeholder="State / Region"
+        formControlName="state"
+        [class.input-invalid]="
+          form.get('state')?.invalid &&
+          (form.get('state')?.touched || form.get('state')?.dirty)
+        "
+      />
 
-            <div class="lg-row">
-                <input class="main-input" type="text" placeholder="First Name" formControlName="firstName" [class.input-invalid]="form.get('firstName')?.invalid && (form.get('firstName')?.touched || form.get('firstName')?.dirty)">
-                <input class="main-input" type="text" placeholder="Last Name" formControlName="lastName" [class.input-invalid]="form.get('lastName')?.invalid && (form.get('lastName')?.touched || form.get('lastName')?.dirty)">
-            </div>
-            <div class="lg-row">
-                <input class="main-input" type="email" placeholder="Email" formControlName="email" [class.input-invalid]="form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty)">
-                <input class="main-input" type="tel" placeholder="Phone Number" formControlName="phone" [class.input-invalid]="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty)">
-            </div>
-            <input class="main-input" type="text" placeholder="Zip Code" formControlName="zip" [class.input-invalid]="form.get('zip')?.invalid && (form.get('zip')?.touched || form.get('zip')?.dirty)">
-            <input class="main-input" type="text" placeholder="State / Region" formControlName="state" [class.input-invalid]="form.get('state')?.invalid && (form.get('state')?.touched || form.get('state')?.dirty)">
+      <!-- Select -->
+      <select
+        class="main-select"
+        id="cdlType"
+        formControlName="cdlType"
+        [class.input-invalid]="
+          form.get('cdlType')?.invalid &&
+          (form.get('cdlType')?.touched || form.get('cdlType')?.dirty)
+        "
+      >
+        <option value="">CDL Type</option>
+        <option value="CDL A">CDL A</option>
+        <option value="CDL B">CDL B</option>
+        <option value="CDL C">CDL C</option>
+      </select>
 
-            <!-- Select -->
-            <select class="main-select" id="cdlType" formControlName="cdlType" [class.input-invalid]="form.get('cdlType')?.invalid && (form.get('cdlType')?.touched || form.get('cdlType')?.dirty)">
-              <option value="">CDL Type</option>
-              <option value="CDL A">CDL A</option>
-              <option value="CDL B">CDL B</option>
-              <option value="CDL C">CDL C</option>
-            </select>
-        
-            <!-- Positions (radio buttons) -->
-            <label class="main-label">Position you are interested in:</label>
-            <div class="position-group">
-              <div *ngFor="let pos of positions" class="position-option">
-                <input type="radio" [value]="pos" formControlName="position" id="{{pos}}" [class.input-invalid]="form.get('position')?.invalid && (form.get('position')?.touched || form.get('position')?.dirty)">
-                <label [for]="pos">
-                  <span class="custom-radio"></span>
-                  {{pos}}
-                </label>
-              </div>
-            </div>
-        
-            <!-- Message -->
-            <textarea class="main-textarea" placeholder="Message" formControlName="message"></textarea>
-        
-            <button class="main-button" type="submit">Submit</button>
-        </form>
-    </div>
-    <div class="drivers-contact__video-wrapper">
-        <video loop autoplay muted playsinline preload="auto" id="contact-drivers-video">
-            <source src="assets/images/drivers/banner/video-drivers.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-    </div>
+      <!-- Positions (radio buttons) -->
+      <label class="main-label">Position you are interested in:</label>
+      <div class="position-group">
+        <div *ngFor="let pos of positions" class="position-option">
+          <input
+            type="radio"
+            [value]="pos"
+            formControlName="position"
+            id="{{ pos }}"
+            [class.input-invalid]="
+              form.get('position')?.invalid &&
+              (form.get('position')?.touched || form.get('position')?.dirty)
+            "
+          />
+          <label [for]="pos">
+            <span class="custom-radio"></span>
+            {{ pos }}
+          </label>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <textarea
+        class="main-textarea"
+        placeholder="Message"
+        formControlName="message"
+      ></textarea>
+
+      <div class="terms-wrapper">
+        <label class="main-label"
+          >I agree to terms & conditions provided by the company. By providing
+          my phone number, I agree to receive text messages from the JDM
+          Expedite</label
+        >
+        <div class="position-group">
+          <div class="position-checkbox-option">
+            <input
+              type="checkbox"
+              [formControl]="acceptTermsControl"
+              id="terms"
+            />
+            <label for="terms">
+              <span class="custom-radio"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="main-button"
+        type="submit"
+        [disabled]="!acceptTermsControl.value"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="drivers-contact__video-wrapper">
+    <video
+      loop
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+      id="contact-drivers-video"
+    >
+      <source
+        src="assets/images/drivers/banner/video-drivers.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 <app-newsletter></app-newsletter>
 <app-drivers-footer-nav></app-drivers-footer-nav>

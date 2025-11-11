@@ -1,62 +1,69 @@
-@import '_colors.scss';
-@import '_breakpoints.scss';
-@import '_variables.scss';
-@import '_typography.scss';
+@import "_colors.scss";
+@import "_breakpoints.scss";
+@import "_variables.scss";
+@import "_typography.scss";
 
 .drivers-contact__container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    @include respond(lg) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+  @include respond(lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .drivers-contact__form-container {
-    padding: 200px 40px 100px 40px;
+  padding: 200px 40px 100px 40px;
 
-    @include respond(xl) {
-        padding: 200px 100px 100px 100px;
-    }
+  @include respond(xl) {
+    padding: 200px 100px 100px 100px;
+  }
 
-    @include respond(qhd) {
-        padding: 200px 300px 100px 300px;
-    }
+  @include respond(qhd) {
+    padding: 200px 300px 100px 300px;
+  }
 }
 
 .driver-contact__heading {
-    font-size: 50px;
-    color: #333;
-    margin-bottom: 30px;
+  font-size: 50px;
+  color: #333;
+  margin-bottom: 30px;
 
-    @include respond(md) {
-        font-size: 100px;
-    }
+  @include respond(md) {
+    font-size: 100px;
+  }
 
-    @include respond(lg) {
-        font-size: 80px;
-    }
+  @include respond(lg) {
+    font-size: 80px;
+  }
 }
 
 .drivers-contact__form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    .main-button {
-        font-size: 18px;
-    }
+  .main-button {
+    font-size: 18px;
+  }
 }
 
 .drivers-contact__video-wrapper {
-    #contact-drivers-video {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
+  #contact-drivers-video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 
-        @include respond(md) {
-            height: 100%;
-        }
-    }   
+    @include respond(md) {
+      height: 100%;
+    }
+  }
+}
+
+.terms-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
 }
