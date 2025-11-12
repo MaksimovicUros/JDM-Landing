@@ -12,7 +12,7 @@
           class="main-input"
           type="text"
           placeholder="First Name"
-          formControlName="firstName"
+          formControlName="firstname"
           [class.input-invalid]="
             form.get('firstName')?.invalid &&
             (form.get('firstName')?.touched || form.get('firstName')?.dirty)
@@ -22,7 +22,7 @@
           class="main-input"
           type="text"
           placeholder="Last Name"
-          formControlName="lastName"
+          formControlName="lastname"
           [class.input-invalid]="
             form.get('lastName')?.invalid &&
             (form.get('lastName')?.touched || form.get('lastName')?.dirty)
@@ -55,10 +55,10 @@
         class="main-input"
         type="text"
         placeholder="Zip Code"
-        formControlName="zip"
+        formControlName="zipcode"
         [class.input-invalid]="
-          form.get('zip')?.invalid &&
-          (form.get('zip')?.touched || form.get('zip')?.dirty)
+          form.get('zipcode')?.invalid &&
+          (form.get('zipcode')?.touched || form.get('zipcode')?.dirty)
         "
       />
       <input
@@ -75,11 +75,11 @@
       <!-- Select -->
       <select
         class="main-select"
-        id="cdlType"
-        formControlName="cdlType"
+        id="cdltype"
+        formControlName="cdltype"
         [class.input-invalid]="
-          form.get('cdlType')?.invalid &&
-          (form.get('cdlType')?.touched || form.get('cdlType')?.dirty)
+          form.get('cdltype')?.invalid &&
+          (form.get('cdltype')?.touched || form.get('cdltype')?.dirty)
         "
       >
         <option value="">CDL Type</option>

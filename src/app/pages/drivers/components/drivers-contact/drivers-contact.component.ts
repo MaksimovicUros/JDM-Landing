@@ -27,13 +27,13 @@ export class DriversContactComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
-      zip: ['', Validators.required],
+      zipcode: ['', Validators.required],
       state: ['', Validators.required],
-      cdlType: ['', Validators.required],
+      cdltype: ['', Validators.required],
       position: ['', Validators.required],
       message: [''],
     });
@@ -53,11 +53,20 @@ export class DriversContactComponent {
   }
 
   onSubmit() {
+    this.contactService.getToken().subscribe((res) => console.log(res));
     if (this.form.valid) {
-      const formData = new FormData();
-      Object.entries(this.form.value).forEach(([key, value]) => {
-        if (value) formData.append(key, value as any);
-      });
+      const formData = {
+        fields: [
+          { name: 'firstname', value: this.form.value.firstname },
+          { name: 'lastname', value: this.form.value.lastname },
+          { name: 'email', value: this.form.value.email },
+          { name: 'phone', value: this.form.value.phone },
+          { name: 'zip', value: this.form.value.zipcode },
+          { name: 'cdltype', value: this.form.value.cdltype },
+          { name: 'position', value: this.form.value.position },
+          { name: 'message', value: this.form.value.message },
+        ],
+      };
 
       this.contactService.submitContact(formData).subscribe({
         next: () => alert('Form sent successfully!'),
