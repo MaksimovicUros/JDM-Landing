@@ -17,14 +17,14 @@ export class DriversContactService {
     );
   }
 
-  getToken() {
-    const headers = new HttpHeaders({
-      Authorization: 'Basic SVZTb2x1dGlvbjoxUzBsdXQxMG4yQDIy',
-      'Content-Type': 'application/json',
-    });
+  // getToken() {
+  //   const headers = new HttpHeaders({
+  //     Authorization: 'Basic SVZTb2x1dGlvbjoxUzBsdXQxMG4yQDIy',
+  //     'Content-Type': 'application/json',
+  //   });
 
-    return this.http.get(`https://extend.jdmexpedite.com/api/login/hubtoken`, {
-      headers,
-    });
-  }
+  //   return this.http.get(`https://extend.jdmexpedite.com/api/login/hubtoken`, {
+  //     headers,
+  //   });
+  // }
 }

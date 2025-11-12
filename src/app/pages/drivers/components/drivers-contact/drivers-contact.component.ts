@@ -53,7 +53,7 @@ export class DriversContactComponent {
   }
 
   onSubmit() {
-    this.contactService.getToken().subscribe((res) => console.log(res));
+    // this.contactService.getToken().subscribe((res) => console.log(res));
     if (this.form.valid) {
       const formData = {
         fields: [
